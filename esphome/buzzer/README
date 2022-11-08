@@ -1,0 +1,18 @@
+# Rtttl Buzzer
+
+## Description
+
+Expose a service to play RTTTL melodies on a buzzer from Home Assistant.
+
+## Wiring
+
+-
+
+## RTTTL melodies
+
+
+### StarWars
+
+```
+# StarWars:d=4,o=5,b=45:32p,32f#,32f#,32f#,8b.,8f#.6,32e6,32d#6,32c#6,8b.6,16f#.6,32e6,32d#6,32c#6,8b.6,16f#.6,32e6,32d#6,32e6,8c#.6,32f#,32f#,32f#,8b.,8f#.6,32e6,32d#6,32c#6,8b.6,16f#.6,32e6,32d#6,32c#6,8b.6,16f#.6,32e6,32d#6,32e6,8c#6
+```

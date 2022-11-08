@@ -1,0 +1,38 @@
+esphome:
+  name: demo-rtttl-buzzer
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: !secret wifi_iot_ssid
+  password: !secret wifi_iot_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret esphome_ota_password
+
+ota:
+  password: !secret esphome_ota_password
+
+output:
+  - platform: esp8266_pwm
+    pin: D1
+    id: rtttl_out
+
+rtttl:
+  output: rtttl_out
+  on_finished_playback:
+    - logger.log: 'Song ended!'
+
+api:
+  services:
+    - service: play_rtttl
+      variables:
+        song_str: string
+      then:
+        - rtttl.play:
+            rtttl: !lambda 'return song_str;'
+

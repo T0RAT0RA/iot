@@ -1,0 +1,35 @@
+# ESPHome
+
+[https://esphome.io/](https://esphome.io/)
+A collection of esphome template
+
+## Setup
+
+- Install docker
+- `docker pull esphome/esphome`
+- `cp secrets.dist.yaml secrets.yaml`
+- Update values in `secrets.yaml`
+
+## Compile firmware
+
+### With Docker
+
+```
+docker run --rm -v "${PWD}":/config --device=<usb-device> -it esphome/esphome run <module>.yaml --device=<usb-device>
+```
+
+Ex:
+
+```
+docker run --rm -v "${PWD}":/config --device=/dev/ttyUSB0 -it esphome/esphome run builtin-led/builtin-led.yaml --device=/dev/ttyUSB0
+```
+
+## Modules
+
+- [builtin-led](./builtin-led)
+- [buzzer](./buzzer)
+- [ldr](./ldr)
+- [moisture-sensor](./moisture-sensor)
+- [reed-switch](./reed-switch)
+- [ssd1306-display](./ssd1306-display)
+- [ws2812b-led](./ws2812b-led)

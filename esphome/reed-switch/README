@@ -1,0 +1,10 @@
+# Reed Switch
+
+## Description
+
+Expose a value a simple binary sensor that is ON when the reed switch is open and OFF when closed.  
+Toggle the builtin LED depending of the sensor threshold value.
+
+## Wiring
+
+-

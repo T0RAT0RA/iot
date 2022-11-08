@@ -1,0 +1,10 @@
+# LDR - Light Dependant Resistor
+
+## Description
+
+Expose a value that changes depending of the light received by the sensor.  
+Toggle the builtin LED depending of the sensor threshold value.
+
+## Wiring
+
+-

@@ -1,0 +1,9 @@
+# WS2812B - RGB LED strip
+
+## Description
+
+Expose a WS2812b led strip to Home Assistant.
+
+## Wiring
+
+-

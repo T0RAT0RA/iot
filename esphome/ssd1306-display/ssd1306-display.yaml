@@ -1,0 +1,53 @@
+esphome:
+  name: ssd1306-display
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: !secret wifi_iot_ssid
+  password: !secret wifi_iot_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret esphome_ota_password
+
+ota:
+  password: !secret esphome_ota_password
+
+output:
+  - id: gpio_builtin_led
+    platform: gpio
+    inverted: True
+    pin: D4
+
+light:
+  - platform: binary
+    name: "Builtin LED"
+    id: builtin_led
+    output: gpio_builtin_led
+
+i2c:
+  sda: D2
+  scl: D1
+
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x64"
+    reset_pin: D0
+    address: 0x3C
+    lambda: |-
+      it.print(0, 0, id(roboto14), "IP");
+      it.printf(it.get_width(), 0, id(roboto14), TextAlign::TOP_RIGHT, "%s", WiFi.localIP().toString().c_str());
+      it.print(0, 14, id(roboto16), "It works.");
+      it.print(0, 30, id(roboto16), "---");
+
+font:
+  - file: "gfonts://Roboto"
+    id: roboto14
+    size: 14
+  - file: "gfonts://Roboto"
+    id: roboto16
+    size: 16

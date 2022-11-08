@@ -1,0 +1,10 @@
+# Moisture Sensor
+
+## Description
+
+Expose a value that changes depending of the ADC value received by the moisture sensor.  
+Toggle the builtin LED depending of the sensor threshold value.
+
+## Wiring
+
+-
