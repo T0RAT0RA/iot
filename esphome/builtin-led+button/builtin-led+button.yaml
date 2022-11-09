@@ -1,0 +1,30 @@
+esphome:
+  name: demo-builtin-led
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: !secret wifi_iot_ssid
+  password: !secret wifi_iot_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret esphome_ota_password
+
+ota:
+  password: !secret esphome_ota_password
+
+output:
+  - id: gpio_builtin_led
+    platform: gpio
+    inverted: True
+    pin: D4
+
+light:
+  - platform: binary
+    name: "Builtin LED"
+    id: builtin_led
+    output: gpio_builtin_led

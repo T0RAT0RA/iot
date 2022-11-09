@@ -1,0 +1,11 @@
+# BuiltIn LED + Button
+
+## Description
+
+Expose the builtin LED (D4) on Wemo D1 mini as a light component in Home Assistant.
+Expose a button, which toggle the builtin LED when clicked.
+
+## Wiring
+
+-
+
