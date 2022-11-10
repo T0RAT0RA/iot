@@ -28,3 +28,16 @@ light:
     name: "Builtin LED"
     id: builtin_led
     output: gpio_builtin_led
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: D3
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    name: Button
+    on_press:
+      then:
+        - light.toggle: builtin_led
