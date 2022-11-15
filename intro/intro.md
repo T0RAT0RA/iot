@@ -49,6 +49,24 @@ https://esphome.io/
 ESPHome est un écosystème pour contrôler votre ESP8266/ESP32 grâce à des fichiers de configuration et les contrôler à distance avec Home Assistant.
 
 
+---
+## ESPHome - Installation
+
+Mac
+
+```bash
+python -m venv .venv
+. .venv/bin/activate
+pip3 install esphome
+esphome version
+```
+
+Linux
+
+```bash
+docker pull esphome/esphome
+```
+
 --- 
 <style scoped>
 img {
@@ -89,6 +107,7 @@ img {
   width: 500px;
 }
 </style>
+
 #### Votre premier object connecté
 
 ![](img/builtin-led+button.png)
