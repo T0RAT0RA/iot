@@ -27,6 +27,7 @@ docker run --rm -v "${PWD}":/config --device=/dev/ttyUSB0 -it esphome/esphome ru
 ## Modules
 
 - [builtin-led](./builtin-led)
+- [led+button](./led+button)
 - [buzzer](./buzzer)
 - [ldr](./ldr)
 - [moisture-sensor](./moisture-sensor)

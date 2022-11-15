@@ -1,5 +1,5 @@
 esphome:
-  name: demo-builtin-led
+  name: led_button
   platform: ESP8266
   board: d1_mini
 
@@ -18,21 +18,21 @@ ota:
   password: !secret esphome_ota_password
 
 output:
-  - id: gpio_builtin_led
+  - id: gpio_led
     platform: gpio
     inverted: True
-    pin: D4
+    pin: D1
 
 light:
   - platform: binary
-    name: "Builtin LED"
-    id: builtin_led
-    output: gpio_builtin_led
+    name: "LED"
+    id: led
+    output: gpio_led
 
 binary_sensor:
   - platform: gpio
     pin:
-      number: D3
+      number: D2
       inverted: true
       mode:
         input: true
@@ -40,4 +40,4 @@ binary_sensor:
     name: Button
     on_press:
       then:
-        - light.toggle: builtin_led
+        - light.toggle: led

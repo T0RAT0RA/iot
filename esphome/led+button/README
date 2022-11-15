@@ -1,0 +1,10 @@
+# LED + Button
+
+## Description
+
+Expose a LED (D1) on Wemo D1 mini as a light component in Home Assistant.
+Expose a button (D2), which toggle the LED when clicked.
+
+## Wiring
+
+-
